@@ -30,30 +30,18 @@ def make_chains(text_string):
     # Split by whitespace
     text_list = text_string.split()
     #loop over every 2 word pair making tuples
-    for i in range(len(text_list) - 1):
+    for i in range(len(text_list) - 2):
         #print text_list[i], text_list[i + 1]
         #if we get back a zero from:
-        word_tuple = (text_list[i], text_list[i + 1])
+        word_tuple = (text_list[i], text_list[i + 1]) 
         tuple_key = chains.get(word_tuple, 0)
         #print tuple_key
         if tuple_key == 0:
-            chains[word_tuple] = [str(i + 2)]
+            chains[word_tuple] = [text_list[i + 2]]
 
         else:
             chains[word_tuple].append(text_list[i + 2])
             #print "found it, again"
-    print chains
-
-        # then we add the tuple as key with empty list as value
-
-
-    # add to dictionary with tuple as key 
-    #check against an error at i+2
-    # add i + to list
-
-
-
-    # your code goes here
 
     return chains
 
