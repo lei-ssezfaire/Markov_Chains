@@ -42,7 +42,8 @@ def make_chains(text_string):
         else:
             chains[word_tuple].append(text_list[i + 2])
             #print "found it, again"
-
+    for each in chains:
+        print each, chains[each]
     return chains
 
 
