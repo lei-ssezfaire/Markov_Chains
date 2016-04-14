@@ -42,8 +42,8 @@ def make_chains(text_string):
         else:
             chains[word_tuple].append(text_list[i + 2])
             #print "found it, again"
-    for each in chains:
-        print each, chains[each]
+    #for each in chains:
+        #print each, chains[each]
     return chains
 
 
@@ -52,7 +52,24 @@ def make_text(chains):
 
     text = ""
 
-    # your code goes here
+    #pick a random key 
+    #poem_list = []
+    random_key_choice = choice(chains.keys() )
+    # print random_key_choice
+    first_word, second_word = random_key_choice
+    poem_list = [first_word, second_word]
+
+    while random_key_choice != ('I', 'am?'):
+    #pick a random value for that key
+        random_value = choice(chains[random_key_choice])
+        # print random_value
+        poem_list.append(random_value)
+        first_word, second_word = random_key_choice
+        random_key_choice = (second_word, random_value)
+    #take the second word from the key and the value to make a new key
+    #rinse repeat until error
+    #print poem_list
+    text = " ".join(poem_list)
 
     return text
 
