@@ -59,8 +59,8 @@ def make_text(chains):
     first_word, second_word = random_key_choice
     poem_list = [first_word, second_word]
 
-    while random_key_choice != ('I', 'am?'):
-    #pick a random value for that key
+    while chains.get(random_key_choice, 0) != 0:
+        #pick a random value for that key
         random_value = choice(chains[random_key_choice])
         # print random_value
         poem_list.append(random_value)
@@ -74,7 +74,7 @@ def make_text(chains):
     return text
 
 
-input_path = "green-eggs.txt"
+input_path = "gettysburg.txt"
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
